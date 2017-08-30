@@ -1,29 +1,40 @@
-Test:
+# ApplicantTest
 
-Create an MVC Asp.net application in C# backed by Mysql using the base schema structure 
-as described by the applicant_test.sql
+## Objective
+Create an [ASP.NET MVC](https://www.asp.net/mvc) application in C# backed by MySQL using the base schema structure as described by the [applicant_test.sql](https://github.com/JW-RWatsonAssoc/ApplicantTest/blob/master/applicant_test.sql)
 
-it should be able to do the following:
- display a list of orders, 
- display an individual order
+The application should be able to do the following:
+* Display a list of orders
+* Display an individual order
 
-these views should be clean and have good structure but do not need to be overly styled
+**_This task should be completed without using the CRUD scaffolding provided in Visual Studio (or any other IDE)._**
+
+## Views
+Views should be clean and have good structure, but do not need to be overly styled. Here are example screenshots of the two necessary views:
+
+![Individual order view][Order]
+![Order list view][OrdersList]
  
-the individual order should calc the total of the order and display it as well as the total quantity of items
+## Models
+The individual order should calculate the total of the order and display it as well as the total quantity of items using the following model guidelines:
 
-An Order is made of a list of LineItems
-a LineItem has a linked Stock and a chosen Unit of that Stock
+* An Order is made of a list of LineItems
+* An Order has a User
+* A LineItem has a Stock and a Unit of that Stock
+* A User should have an address to bill to 
 
-An Order should also have a linked User
-A User should have an address to bill to 
+**__These relationships have been omitted from the sql file and the foreign keys and constraints will need to be recreated as part of this task.__**
 
-these relationships have been omitted from the sql file
-and the foreign keys and constraints will need to be recreated as part of this test
+Below is an example screenshot of the necessary database schema:
+![Database schema][Schema]
 
-you also need to add a table for a User  
-and link that to the Order and display those details on the 
-individual order view. 
+Additionally, create a table for a User and link that to the Order. Display the User details on the 
+individual order view. An example of this is shown in the above individual order view image.
 
-this should be done with out using the CRUD scaffolding provided in visual studio
+## Bonus
+Include one more feature not listed above:
+* Write to the database
 
-include one more feature not listed above that writes to the database, 
+[Order]: https://github.com/JW-RWatsonAssoc/ApplicantTest/raw/master/Order.PNG "Order"
+[OrdersList]: https://github.com/JW-RWatsonAssoc/ApplicantTest/raw/master/OrdersList.PNG "OrdersList"
+[Schema]: https://github.com/JW-RWatsonAssoc/ApplicantTest/raw/master/Schema.PNG "Schema"
