@@ -1,0 +1,41 @@
+﻿@using ApplicantTest.Models
+@model Order
+@{
+    ViewBag.Title = "Order";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Order</h2>
+
+<p>
+    Order Number: @Model.Order_Id <br />
+    Order Total: @Model.Order_Total<br />
+    Order Qty: @Model.Order_Qty
+</p>
+<h3>Bill To:</h3>
+
+<p>
+    @Model.User_FirstName @Model.User_LastName<br />
+    @Model.User_Address1<br />
+    @Model.User_Address2<br />
+    @Model.User_City, @Model.User_State @Model.User_Zip
+</p>
+
+
+<table width="100%">
+    <tr>
+        <th>Description</th>
+        <th>Qty</th>
+        <th>Unit</th>
+        <th>Cost</th>
+    </tr>
+    @foreach (LineItem item in Model.Items)
+    {
+        <tr>
+            <td>@item.Item_Description</td>
+            <td>@item.Item_Qty</td>
+            <td>@item.Unit_Name</td>
+            <td>@item.Unit_Cost</td>
+        </tr>
+    }
+</table>
